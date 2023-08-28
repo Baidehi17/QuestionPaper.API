@@ -26,7 +26,7 @@ namespace QuestionPaper.Repository.Repository.Implimentation
         {
           return await context.Set<T>().Where(s=>s.Equals(id)).ToListAsync();
         }
-    public async Task<T> GetById(int id)
+        public async Task<T> GetById(int id)
         {
 
             return await context.Set<T>().FindAsync(id);

@@ -43,6 +43,27 @@ namespace QuestionPaper.BLL.Implementation
             question.Add(booking);
         }
 
+        public async Task DeleteQuestionDetailsById(int id)
+        {
+            try
+            {
+                IEnumerable<subQuestions> bookingList = await question.GetAll();
+                IEnumerable<subQuestions> subQuestions = bookingList.Where(b => b.questionDetails_id == id);
+                foreach (subQuestions subQuestion in subQuestions)
+                {
+                    await Task.Run(() => question.Delete(subQuestion.id));
+                }
+            }
+            catch (Exception ex){ 
+            }     
+            
+        }
+        public async Task UpdateQuestionsSubDetails(subQuestionsModel user)
+        {
+            subQuestions booking = AutoMapper<subQuestionsModel, subQuestions>.Map(user);
+            question.Update(booking);
+        }
+
         public void DeleteById(int id)
         {
             question.Delete(id);

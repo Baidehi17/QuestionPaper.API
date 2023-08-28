@@ -25,14 +25,24 @@ namespace QuestionPaper.API.Controllers
             return await question.GetQuestionDetailsById(id);
         }
         [HttpPost]
-        public void AddDriver(subQuestionsModel questionDetail)
+        public void AddSubQuest(subQuestionsModel questionDetail)
         {
             question.InsertQuestionDetails(questionDetail);
         }
-        [HttpPut("{id}")]
-        public void UpdateDriver(subQuestionsModel questionDetails)
+        [HttpPut("id")]
+        public void UpdateAddSubquest(subQuestionsModel questionDetails)
         {
             question.UpdateQuestionDetails(questionDetails);
+        }
+        [HttpDelete("id")]
+        public Task DeleteSubQuestionDetail(int id)
+        {
+           return question.DeleteQuestionDetailsById(id);
+        }
+        [HttpDelete("DeleteById")]
+        public void DeleteById(int id)
+        {
+            question.DeleteById(id);
         }
     }
 }

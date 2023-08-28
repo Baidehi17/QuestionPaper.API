@@ -12,6 +12,8 @@ namespace QuestionPaper.BLL.Interface
         Task<IEnumerable<subQuestionsModel>> GetAllQuestionDetails();
         Task<IEnumerable<subQuestionsModel>> GetQuestionDetailsById(int id);
         public void InsertQuestionDetails(subQuestionsModel data);
-        public void UpdateQuestionDetails(subQuestionsModel user);
+        public  void UpdateQuestionDetails(subQuestionsModel user);
+        public Task DeleteQuestionDetailsById(int id);
+        public void DeleteById(int id);
     }
 }

@@ -35,10 +35,11 @@ namespace QuestionPaper.BLL.Implementation
             questionDetails booking = AutoMapper<questionDetailsModel, questionDetails>.Map(user);
             question.Update(booking);
         }
-        public void InsertQuestionDetails(questionDetailsModel data)
+        public int InsertQuestionDetails(questionDetailsModel data)
         {
             questionDetails booking = AutoMapper<questionDetailsModel, questionDetails>.Map(data);
             question.Add(booking);
+            return booking.Id;
         }
 
         public void DeleteById(int id)
