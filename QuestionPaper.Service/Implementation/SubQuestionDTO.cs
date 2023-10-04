@@ -27,7 +27,6 @@ namespace QuestionPaper.BLL.Implementation
         {
             IEnumerable<subQuestions> bookingList = await question.GetAll();
             IEnumerable<subQuestions> subQuestions = bookingList.Where(b=>b.questionDetails_id == id);
-           // IEnumerable<subQuestions> bookingList = await question.GetByIdSubQuestion(id);
            IEnumerable<subQuestionsModel> list = AutoMapper<subQuestions, subQuestionsModel>.Map(subQuestions);
             return list;
         }

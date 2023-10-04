@@ -7,10 +7,10 @@ namespace QuestionPaper.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class QuestionDetailsController : ControllerBase
+    public class questionDetailsController : ControllerBase
     {
         private readonly IQuestionDetailsDTO question;
-        public QuestionDetailsController(IQuestionDetailsDTO _question)
+        public questionDetailsController(IQuestionDetailsDTO _question)
         {
             question = _question;
         }
